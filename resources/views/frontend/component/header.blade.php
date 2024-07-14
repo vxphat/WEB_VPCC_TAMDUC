@@ -19,7 +19,11 @@
                                     Xin chào, {{ Auth::user()->name }}<i class="ti-angle-down ml-1"></i>
                                 </a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="">Quản lý tài khoản</a>
+                                    @php
+                                        $name = createSlug(Auth::user()->name);
+                                    @endphp
+                                    <a class="dropdown-item" href="{{ route('client.managerAccount', $name) }}">Quản lý tài
+                                        khoản</a>
                                     <a class="dropdown-item" href="{{ route('client.logout') }}">Đăng xuất</a>
                                 </div>
                             </li>

@@ -71,7 +71,7 @@ class AuthClientController extends Controller
         Auth::logout();   //Đăng xuất người dùng hiện tại, xóa thông tin xác thực người dùng
         $request->session()->invalidate();     //Hủy session hiện tại của người dùng, xóa tất cả dữ liệu bao gồm ttdangnhap
         $request->session()->regenerateToken();         //Tái tạo CSRF mới cho Token
-        return redirect()->route('home.index');
+        return redirect()->route('home.index')->with('success', 'Đăng xuất thành công!');
 
     }
 }

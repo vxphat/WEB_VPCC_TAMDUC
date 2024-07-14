@@ -1,6 +1,6 @@
 <base href="{{ config('app.url') }}">
 <meta charset="utf-8">
-<title>{{$titleClient ?? 'PHGMNHD NEWS'}}</title>
+<title>{{ $titleClient ?? 'PHGMNHD NEWS' }}</title>
 
 <!-- mobile responsive meta -->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -14,6 +14,12 @@
 <link rel="stylesheet" href="{{ asset('frontend/plugins/bootstrap/bootstrap.min.css') }}">
 <link rel="stylesheet" href="{{ asset('frontend/plugins/themify-icons/themify-icons.css') }}">
 <link rel="stylesheet" href="{{ asset('frontend/plugins/slick/slick.css') }}">
+
+@if (isset($config['css']) && is_array($config['css']))
+    @foreach ($config['css'] as $key => $val)
+        {!! '<link rel="stylesheet" href="' . $val . '">' !!}
+    @endforeach
+@endif
 
 <!-- Main Stylesheet -->
 <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}" media="screen">

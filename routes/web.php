@@ -100,7 +100,6 @@ Route::post('ajax/login/clientLogin', [AjaxAuthController::class, 'clientLogin']
 Route::post('ajax/register/register', [AjaxAuthController::class, 'register'])->name('client.register');
 Route::get('register/confirm/{token}', [AuthClientController::class, 'verifyEmail'])->name('register.confirm');
 Route::get('password/reset/{token}/{email}', [AuthClientController::class, 'verifyPassword'])->name('password.reset');
-
 Route::post('password/comfirmReset/{email}', [AuthClientController::class, 'resetPassword'])->name('password.confirmReset');
 Route::post('ajax/login/confirmPassword', [AjaxAuthController::class, 'confirmPassword'])->name('client.confirmPassword');
 Route::get('client/logout', [AuthClientController::class, 'logout'])->name('client.logout');
@@ -109,7 +108,7 @@ Route::get('client/logout', [AuthClientController::class, 'logout'])->name('clie
 Route::post('ajax/comment/sendComment', [CommentController::class, 'send'])->name('ajax.comment.sendComment');
 Route::post('ajax/comment/deleteComment', [CommentController::class, 'delete'])->name('ajax.comment.deleteComment');
 
-
+Route::get('account/{name}/management', [HomeController::class, 'managerAccount'])->name('client.managerAccount');
 
 Route::post('mail/send', [HomeController::class, 'successMail'])->name('mail.send');
 Route::get('/tim-kiem', [FrontendPostController::class, 'searchResult'])->name('post.search');
