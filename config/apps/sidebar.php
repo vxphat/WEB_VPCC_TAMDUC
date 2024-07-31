@@ -36,15 +36,10 @@ return [
             ]
         ],
         [
-            'title' => 'Cấu Hình Chung',
+            'title' => 'QL Bình Luận',
             'icon' => 'fa fa-file',
-            'name' => ['language', 'generate', 'widget'],
-            'subModule' => [
-                [
-                    'title' => 'Cấu Hình Hệ Thống',
-                    'route' => 'system/index'
-                ],
-            ]
+            'name' => ['comment'],
+            'route' => 'comment/index'
         ]
     ],
 ];

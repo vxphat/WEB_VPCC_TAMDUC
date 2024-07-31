@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UpdateAccountRequest;
 use App\Mail\SendMail;
 use App\Repositories\Interfaces\PostCatalogueRepositoryInterface as PostCatalogueRepository;
 use App\Repositories\Interfaces\PostRepositoryInterface as PostRepository;
 use App\Repositories\Interfaces\UserRepositoryInterface as UserRepository;
+use App\Services\Interfaces\UserServiceInterface as UserService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -17,14 +19,17 @@ class HomeController extends Controller
     protected $postRepository;
     protected $postCatalogueRepository;
     protected $userRepository;
+    protected $userService;
     public function __construct(
         PostRepository $postRepository,
         PostCatalogueRepository $postCatalogueRepository,
-        UserRepository $userRepository
+        UserRepository $userRepository,
+        UserService $userService
     ) {
         $this->postRepository = $postRepository;
         $this->postCatalogueRepository = $postCatalogueRepository;
         $this->userRepository = $userRepository;
+        $this->userService = $userService;
     }
 
     public function index()
@@ -58,9 +63,19 @@ class HomeController extends Controller
     }
 
 
-    public function managerAccount(){
+    public function managerAccount($name, $id)
+    {
+        $user = $this->userRepository->findByCondition(...$this->agrumentUserDetail($id));
         $config = $this->config();
-        return view('frontend.management', compact('config'));
+        return view('frontend.management', compact('config', 'user'));
+    }
+
+    public function updateAccount($id, UpdateAccountRequest $request)
+    {
+        if ($this->userService->update($id, $request)) {
+            return redirect()->route('home.index')->with('success', 'Cập nhật tài khoản thành công');
+        }
+        return redirect()->route('home.index')->with('error', 'Cập nhật tài khoản không thành công. Hãy thử lại');
     }
 
 
@@ -88,6 +103,17 @@ class HomeController extends Controller
             'orderBy' => ['id', 'DESC'],
         ];
     }
+
+    private function agrumentUserDetail($id)
+    {
+        return [
+            'condition' => [
+                ['id', '=', $id]
+            ],
+            'flag' => false,
+        ];
+    }
+
 
 
     private function config()

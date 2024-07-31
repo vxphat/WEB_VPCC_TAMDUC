@@ -68,6 +68,14 @@ class BaseRepository implements BaseRepositoryInterface
         return $model;
     }
 
+
+
+    public function delete(int $id = 0)
+    {
+        return $this->findById($id)->delete();
+    }
+
+
     public function updateByWhereIn(string $whereInField = '', array $whereIn = [], array $payload = [])
     //Where In giúp lọc các bản ghi dựa trên một tập hợp các giá trị cụ thể cho một cột nào đó. WHERE column IN (value1, value2, value3, ...)
     {
@@ -75,11 +83,6 @@ class BaseRepository implements BaseRepositoryInterface
         //Tìm các bản ghi mà trường $whereInField có giá trị nằm trong mảng $whereIn, cập nhật thành các giá trị trong mảng $payload
     }
 
-
-    public function delete(int $id = 0)
-    {
-        return $this->findById($id)->delete();
-    }
 
 
     public function forceDelete(int $id = 0)

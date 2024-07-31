@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\Ajax\CommentController;
+use App\Http\Controllers\Ajax\CommentController as AjaxComment;
 use App\Http\Controllers\Backend\AuthController;
+use App\Http\Controllers\Backend\CommentController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\PostCatalogueController;
 use App\Http\Controllers\Backend\PostController;
@@ -81,6 +82,12 @@ Route::group(['middleware' => ['admin']], function () {
         Route::delete('{id}/destroy', [PostController::class, 'destroy'])->where(['id' => '[0-9]+'])->name('post.destroy');
     });
 
+    Route::group(['prefix' => 'comment'], function () {
+        Route::get('index', [CommentController::class, 'index'])->name('comment.index');
+        Route::get('{id}/delete', [CommentController::class, 'delete'])->where(['id' => '[0-9]+'])->name('comment.delete');
+        Route::delete('{id}/destroy', [CommentController::class, 'destroy'])->where(['id' => '[0-9]+'])->name('comment.destroy');
+    });
+
 
     //ROUTES AJAX
 
@@ -105,10 +112,12 @@ Route::post('ajax/login/confirmPassword', [AjaxAuthController::class, 'confirmPa
 Route::get('client/logout', [AuthClientController::class, 'logout'])->name('client.logout');
 
 
-Route::post('ajax/comment/sendComment', [CommentController::class, 'send'])->name('ajax.comment.sendComment');
-Route::post('ajax/comment/deleteComment', [CommentController::class, 'delete'])->name('ajax.comment.deleteComment');
+Route::post('ajax/comment/sendComment', [AjaxComment::class, 'send'])->name('ajax.comment.sendComment');
+Route::post('ajax/comment/deleteComment', [AjaxComment::class, 'delete'])->name('ajax.comment.deleteComment');
 
-Route::get('account/{name}/management', [HomeController::class, 'managerAccount'])->name('client.managerAccount');
+Route::get('account/{name}/{id}/management', [HomeController::class, 'managerAccount'])->name('client.managerAccount');
+Route::post('account/{id}/update', [HomeController::class, 'updateAccount'])->where(['id' => '[0-9]+'])->name('client.update');
+
 
 Route::post('mail/send', [HomeController::class, 'successMail'])->name('mail.send');
 Route::get('/tim-kiem', [FrontendPostController::class, 'searchResult'])->name('post.search');

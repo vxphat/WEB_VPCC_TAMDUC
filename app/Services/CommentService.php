@@ -26,20 +26,19 @@ class CommentService extends BaseService implements CommentServiceInterface
 
 
 
-    // public function paginate($request)
-    // {
-    //     $condition['keyword'] = addslashes($request->input('keyword'));
-    //     $condition['publish'] = $request->integer('publish');
-    //     $perPage = ($request->integer('perpage') > 0) ? $request->integer('perpage') : 9;
-    //     $users = $this->commentRepository->pagination(
-    //         $this->paginateSelect(),
-    //         $condition,
-    //         $perPage,
-    //         ['path' => 'user/index'],
-    //     );
+    public function paginate($request)
+    {
+        $condition['keyword'] = addslashes($request->input('keyword'));
+        $perPage = ($request->integer('perpage') > 0) ? $request->integer('perpage') : 9;
+        $users = $this->commentRepository->pagination(
+            $this->paginateSelect(),
+            $condition,
+            $perPage,
+            ['path' => 'comment/index'],
+        );
 
-    //     return $users;
-    // }
+        return $users;
+    }
 
     public function send($request)
     {
@@ -111,12 +110,9 @@ class CommentService extends BaseService implements CommentServiceInterface
     {
         return [
             'id',
-            'email',
-            'phone',
-            'address',
-            'name',
-            'publish',
-            'user_catalogue_id'
+            'content',
+            'post_id',
+            'user_id',
         ];
     }
 

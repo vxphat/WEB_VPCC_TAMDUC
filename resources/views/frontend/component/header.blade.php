@@ -21,8 +21,11 @@
                                 <div class="dropdown-menu">
                                     @php
                                         $name = createSlug(Auth::user()->name);
+                                        $id = Auth::user()->id;
                                     @endphp
-                                    <a class="dropdown-item" href="{{ route('client.managerAccount', $name) }}">Quản lý tài
+                                    <a class="dropdown-item"
+                                        href="{{ route('client.managerAccount', ['name' => $name, 'id' => $id]) }}">Quản
+                                        lý tài
                                         khoản</a>
                                     <a class="dropdown-item" href="{{ route('client.logout') }}">Đăng xuất</a>
                                 </div>

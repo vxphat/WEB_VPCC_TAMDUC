@@ -33,6 +33,15 @@ return [
             'title' => 'Xóa thành viên'
         ]
     ],
+    'comment' => [
+        'index' => [
+            'title' => 'Quản lý bình luận',
+            'table' => 'Danh sách bình luận'
+        ],
+        'delete' => [
+            'title' => 'Xóa bình luận'
+        ]
+    ],
     'post' => [
         'index' => [
             'title' => 'Quản lý bài viết',
