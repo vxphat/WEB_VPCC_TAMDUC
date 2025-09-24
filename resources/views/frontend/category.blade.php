@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10 mb-4">
-                    <h1 class="h2 mb-4">Kết quả tìm kiếm cho
+                    <h1 class="h2 mb-4">
                         <mark>{{ $postCatalogue->name }}</mark>
                     </h1>
                 </div>

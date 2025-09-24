@@ -40,6 +40,7 @@ class PostController extends Controller
 
     public function index(Request $request)
     {
+        
         // $this->authorize('modules', 'post.index');
         $posts = $this->postService->paginate($request);
         // dd($posts);
@@ -47,7 +48,7 @@ class PostController extends Controller
         $config = $this->config();
         $config['model'] = 'Post';
         $config['modelCheck'] = 'Post';
-
+        
         $config['seo'] = config('apps.messages.post');
         return view(
             'backend.post.post.index',

@@ -178,6 +178,7 @@ class PostService extends BaseService implements PostServiceInterface
             'view',
             'publish',
             'user_id',
+            'posts.post_catalogue_id',
         ];
     }
 

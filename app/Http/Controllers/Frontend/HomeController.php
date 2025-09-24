@@ -36,6 +36,7 @@ class HomeController extends Controller
     {
         // dd(Auth::id());
         $posts = $this->postRepository->findByCondition(...$this->agrumentPost());
+        
         //lấy thông danh sách bài viết
         $users = $this->userRepository->findByCondition(...$this->agrumentUsers());
         //Lấy danh sách User, có role là cộng tác viên bài viết

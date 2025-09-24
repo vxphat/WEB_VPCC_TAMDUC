@@ -9,3 +9,4 @@ namespace App\Services\Interfaces;
 interface PostServiceInterface
 {
 }
+ 

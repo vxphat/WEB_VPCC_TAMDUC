@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 /**
  * WEBSITE: https://themefisher.com
  * TWITTER: https://twitter.com/themefisher
@@ -14,23 +16,41 @@ VERSION:	Versoin Number
 /*------------------------------------------------------------------
 [TABLE OF CONTENTS]
 -------------------------------------------------------------------*/
+
+:root {
+  --colorPrimary: #FB3A3A;
+  --colorTextPrimary: #595959;
+
+
+
+}
+
+
 /*  typography */
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
 
 body {
   line-height: 1.7;
-  font-family: "Nunito Sans", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
   -webkit-font-smoothing: antialiased;
-  color: #555;
-  font-size: 15px;
+  color: var(--colorTextPrimary);
+  font-size: 16px;
+
 }
 
 p {
   font-weight: 400;
-  color: #555;
+  color: var(--colorTextPrimary);
   font-size: 15px;
   line-height: 1.7;
-  font-family: "Nunito Sans", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
 }
 
 h1,
@@ -46,7 +66,7 @@ h6,
 .h5,
 .h6 {
   color: #333;
-  font-family: "Nunito Sans", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
   font-weight: 800;
   line-height: 1.2;
 }
@@ -84,7 +104,7 @@ h6,
 /* Button style */
 .btn {
   font-size: 14px;
-  font-family: "Nunito Sans", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
   font-weight: 700;
   text-transform: uppercase;
   padding: 10px 22px;
@@ -1893,12 +1913,12 @@ mark {
   color: red !important;
 }
 
-.bd-1{
+.bd-1 {
   border: 1px solid #ccc !important;
 }
 
-.custom-label{
+.custom-label {
   font-size: medium;
-  font-weight:bolder;
+  font-weight: bolder;
   padding-left: 5px;
 }

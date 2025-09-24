@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Repositories\Interfaces\BaseRepositoryInterface;
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 /**
  * Class BaseService
@@ -21,35 +22,44 @@ class BaseRepository implements BaseRepositoryInterface
 
 
     public function pagination(
-        array $column = ['*'],      //Chỉ định các cột cần chọn từ cơ sở dữ liệu
-        array $condition = [],      //Điều kiện để lọc kết quả truy vấn
-        int $perPage = 9,           //Số lượng mục hiển thị trên mỗi trang
-        array $extend = [],         //Các tham số bổ sung như: Đường dẫn cho các liên kết phân trang...
-        array $orderBy = ['id', 'DESC'],        //Chỉ định cột và thứ tự để sắp xếp kết quả
-        array $join = [],           //Điều kiện kết nối các bảng liên quan
-        array $relations = [],      //Tải trước các mối quan hệ
-        array $rawQuery = []        //Sử dụng cho cây phân cấp (Bình luận)
-
+        array $column = ['*'],      // Chỉ định các cột cần chọn
+        array $condition = [],      
+        int $perPage = 9,           
+        array $extend = [],         
+        array $orderBy = ['id', 'DESC'],        
+        array $join = [],           
+        array $relations = [],      
+        array $rawQuery = []        
     ) {
-        $query = $this->model->select($column);         //khởi tạo truy vấn với các cột được chỉ định
+        $query = $this->model->select($column);
+
+     // Nếu có groupBy thì bắt buộc sửa SELECT
+        if (!empty($extend['groupBy'])) {
+            // Nếu bạn chỉ muốn đếm số lượng theo group
+            $query = $this->model->select($extend['groupBy'])
+                ->addSelect(DB::raw('COUNT(*) as total_count'));
+        }
+
         return $query
-            ->keyword($condition['keyword'] ?? null)        //Lọc kết quả dựa trên từ khóa nếu có
+            ->keyword($condition['keyword'] ?? null)
             ->publish($condition['publish'] ?? null)
             ->relationCount($relations ?? null)
             ->CustomWhere($condition['where'] ?? null)
             ->customWhereRaw($rawQuery['whereRaw'] ?? null)
             ->customJoin($join ?? null)
-            ->customGroupBy($extend['groupBy'] ?? null)         //Nhóm kết quả nếu có chỉ định
-            ->customOrderBy($orderBy ?? null)           //Sắp xếp kết quả dựa trên cột và thứ tự chỉ định
-            ->paginate($perPage)            //Phân trang kết quả
-            ->withQueryString()->withPath(env('APP_URL') . $extend['path']);
-        //tạo ra URL đầy đủ cho các liên kết phân trang, kết hợp URL gốc của ứng dụng (APP_URL từ tệp .env) với đường dẫn được chỉ định trong $extend['path'].
+            ->customGroupBy($extend['groupBy'] ?? null)   // chỉ chạy khi có groupBy
+            ->customOrderBy($orderBy ?? null)
+            ->paginate($perPage)   // dùng paginate thay vì get($perPage)
+            ->withQueryString()
+            ->withPath(env('APP_URL') . ($extend['path'] ?? ''));
     }
+
 
     public function paginate($perpage)
     {
         $model = $this->model->orderBy('id', 'DESC')->paginate($perpage);
         return $model;
+        
     }
 
 

@@ -68,88 +68,11 @@
                 stroke-width="2" />
         </svg>
     </div>
+    
     <section class="section-sm">
         <div class="container">
             <div class="row justify-content-center">
-                <aside class="col-lg-4 @@sidebar">
-                    <!-- Search -->
-                    <div class="widget">
-                        <h4 class="widget-title"><span>Search</span></h4>
-                        <form action="{{ route('post.search') }}" class="widget-search">
-                            <input class="mb-3" id="search-query" name="keyword" type="search"
-                                placeholder="Type &amp; Hit Enter...">
-                            <i class="ti-search"></i>
-                            <input type="hidden" name="publish" value="2">
-                            <button type="submit" class="btn btn-primary btn-block">Search</button>
-                        </form>
-                    </div>
-
-                    <!-- about me -->
-                    <div class="widget widget-about">
-                        <h4 class="widget-title">Hi, I am Phgmnhd!</h4>
-                        <img class="img-fluid" src="userfiles/image/Users/me.jpg" alt="Themefisher">
-                        <p>Là một người sáng lập, tôi muốn mang lại giá trị tốt nhất cho người sử dụng. Mong mọi người sẽ
-                            yêu thích nó.</p>
-                        <ul class="list-inline social-icons mb-3">
-
-                            <li class="list-inline-item"><a href="#"><i class="ti-facebook"></i></a></li>
-
-                            <li class="list-inline-item"><a href="#"><i class="ti-twitter-alt"></i></a></li>
-
-                            <li class="list-inline-item"><a href="#"><i class="ti-linkedin"></i></a></li>
-
-                            <li class="list-inline-item"><a href="#"><i class="ti-github"></i></a></li>
-
-                            <li class="list-inline-item"><a href="#"><i class="ti-youtube"></i></a></li>
-
-                        </ul>
-                        <a href="about-me.html" class="btn btn-primary mb-2">About me</a>
-                    </div>
-
-                    <!-- Promotion -->
-                    {{-- <div class="promotion">
-                        <img src="frontend/images/promotion.jpg" class="img-fluid w-100">
-                        <div class="promotion-content">
-                            <h5 class="text-white mb-3">Create Stunning Website!!</h5>
-                            <p class="text-white mb-4">Lorem ipsum dolor sit amet, consectetur sociis. Etiam nunc amet id
-                                dignissim. Feugiat id tempor vel sit ornare turpis posuere.</p>
-                            <a href="https://themefisher.com/" class="btn btn-primary">Get Started</a>
-                        </div>
-                    </div> --}}
-
-                    <!-- authors -->
-                    <div class="widget widget-author">
-                        <h4 class="widget-title">Cộng tác viên</h4>
-                        @foreach ($users as $user)
-                            <div class="media align-items-center">
-                                <div class="mr-3">
-                                    <img class="widget-author-image" src="{{ $user->image }}">
-                                </div>
-                                <div class="media-body">
-                                    <h5 class="mb-1"><a class="post-title"
-                                            href="author-single.html">{{ $user->name }}</a>
-                                    </h5>
-                                    <span>{{ $user->user_catalogues->name }}<br>Cộng tác viên </span>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                    <!-- Search -->
-
-                    <div class="widget">
-                        <h4 class="widget-title"><span>Đừng bỏ lỡ thông tin mới nhất</span></h4>
-                        <form action="{{ route('mail.send') }}" method="post" name="mc-embedded-subscribe-form" class="widget-search">
-                            @csrf
-                            <input class="mb-3" id="search-query" name="email" type="search"
-                                placeholder="Địa chỉ Email của bạn">
-                            <i class="ti-email"></i>
-                            <button type="submit" class="btn btn-primary btn-block" name="subscribe">Đăng kí
-                                ngay</button>
-                            <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                                <input type="text" name="b_463ee871f45d2d93748e77cad_a0a2c6d074" tabindex="-1">
-                            </div>
-                        </form>
-                    </div>
+                <aside class="col-lg-6 @@sidebar">
 
                     <!-- categories -->
                     {{-- <div class="widget widget-categories">
@@ -255,8 +178,8 @@
                             </ul>
                         </div> --}}
                 </aside>
-                <div class="col-lg-8 mb-5 mb-lg-0">
-                    <h2 class="h5 section-title">Tin mới nhất</h2>
+                <div class="col-lg-12 mb-5 mb-lg-0">
+                    <h2 class="h5 section-title">VĂN PHÒNG CÔNG CHỨNG TÂM ĐỨC</h2>
                     @foreach ($posts as $post)
                         <article class="card mb-4">
                             <div class="row card-body">
@@ -267,14 +190,14 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <h3 class="h4 mb-3"><a class="post-title"
+                                    <h3 class="h3 mb-3"><a class="post-title"
                                             href="{{ route('post.show', ['catalogueCanonical' => $postCatalogue->canonical, 'postCanonical' => $post->canonical]) }}">{{ $post->name }}</a>
                                     </h3>
                                     <ul class="card-meta list-inline">
                                         <li class="list-inline-item">
                                             <a href="author-single.html" class="card-meta-author">
                                                 <img src="{{ $post->user->image }}" alt="John Doe">
-                                                <span>{{ $post->user->name }}</span>
+                                                <span>{{ $post->user->name }} </span>
                                             </a>
                                         </li>
                                         {{-- <li class="list-inline-item">
@@ -283,14 +206,9 @@
                                         <li class="list-inline-item">
                                             <i class="ti-calendar"></i>{{ $post->created_at }}
                                         </li>
-                                        {{-- <li class="list-inline-item">
-                                            <ul class="card-meta-tag list-inline">
-                                                <li class="list-inline-item"><a href="tags.html">Demo</a></li>
-                                                <li class="list-inline-item"><a href="tags.html">Elements</a></li>
-                                            </ul>
-                                        </li> --}}
+                                       
                                     </ul>
-                                    <p><em>{{$post->description}}</em></p>
+                                    <p><em>{{ Str::words($post->description, 40, '...') }}</em></p>
                                     <a href="{{ route('post.show', ['catalogueCanonical' => $postCatalogue->canonical, 'postCanonical' => $post->canonical]) }}"
                                         class="btn btn-outline-primary">Xem thêm</a>
                                 </div>
