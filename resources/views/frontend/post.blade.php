@@ -1,52 +1,44 @@
 @extends('frontend.layout')
 
-@section('clientContent')
-    <div class="py-3"></div>
-    <section class="section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class=" col-lg-9   mb-5 mb-lg-0">
-                    <article>
-                        <div class="post-slider mb-4">
-                            <img src="{{ $post->image }}" class="card-img" alt="post-thumb">
-                        </div>
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('frontend/css/post-style.css') }}">
+@endsection
 
-                        <p style="font-size: 18px"><em>PHGMNHD NEWS: {{ $post->description}} </em></p>
-                        <ul class="card-meta my-3 list-inline">
-                            <li class="list-inline-item">
-                                <a href="author-single.html" class="card-meta-author">
-                                    <img src="../../../public/frontend/images/kate-stone.jpg" alt="">
-                                    <span>{{ $post->user->name }}</span>
-                                </a>
-                            </li>
-                            {{-- <li class="list-inline-item">
-                            <i class="ti-timer"></i>2 Min To Read
-                        </li> --}}
-                            <li class="list-inline-item">
-                                <i class="ti-calendar"></i>{{ $post->created_at }}
-                            </li>
-                            {{-- <li class="list-inline-item">
-                            <ul class="card-meta-tag list-inline">
-                                <li class="list-inline-item"><a href="tags.html">Color</a></li>
-                                <li class="list-inline-item"><a href="tags.html">Recipe</a></li>
-                                <li class="list-inline-item"><a href="tags.html">Fish</a></li>
-                            </ul>
-                        </li> --}}
-                        </ul>
-                        <div class="content">
-                            {!! $post->content !!}
-                        </div>
-                        <div class="author-bottom text-right">
-                            <h4>{{ $post->user->name }}</h4>
-                        </div>
-                    </article>
+@section('clientContent')
+    <section class="section">
+        <div class="container post-container">
+            <article>
+                <h3 class="post-title">{{ $post->name }}</h3>
+                
+                <div class="post-meta mt-3">
+                    <span class="author-name"><i class="ti-user"></i> {{ $post->user->name }}</span>
+                    <span class="post-date"><i class="ti-calendar"></i> {{ $post->created_at->format('H:i d/m/Y') }}</span>
+                </div>
+
+                <div class="post-description my-3">
+                    {{ $post->description }}
+                </div>
+
+                <div class="post-image">
+                    <img src="{{ $post->image }}" alt="{{ $post->name }}">
+                    <div class="post-image-caption">{{ $post->name }}</div>
+                </div>
+
+                <div class="post-content text-justify">
+                    {!! $post->content !!}
+                </div>
+
+                <div class="author-info d-flex align-items-center">
+                    
+                </div>
+            </article>
 
                 </div>
 
                 @php
                     $dataPost = $post->id ?? null;
                 @endphp
-                <div class="col-lg-9 col-md-12">
+                <!-- <div class="col-lg-9 col-md-12">
                     <div class="mb-5 border-top mt-4 pt-5">
                         <h3 class="mb-4">Comments</h3>
                         <div class="d-block mb-4 pb-4">
@@ -105,7 +97,7 @@
 
 
                     </div>
-                </div>
+                </div> -->
 
             </div>
         </div>

@@ -123,31 +123,31 @@ h6,
 }
 
 .btn-primary {
-  background: #4FD675;
+  background: var(--colorPrimary);
   color: #fff;
-  border-color: #4FD675;
+  border-color: var(--colorPrimary);
 }
 
 .btn-primary:active,
 .btn-primary:hover,
 .btn-primary.focus,
 .btn-primary.active {
-  background: #4FD675 !important;
-  border-color: #4FD675 !important;
+  background: var(--colorPrimary) !important;
+  border-color: var(--colorPrimary) !important;
 }
 
 .btn-outline-primary {
   background: transparent;
-  color: #4FD675;
-  border-color: #4FD675;
+  color: var(--colorPrimary);
+  border-color: var(--colorPrimary);
 }
 
 .btn-outline-primary:active,
 .btn-outline-primary:hover,
 .btn-outline-primary.focus,
 .btn-outline-primary.active {
-  background: #4FD675 !important;
-  border-color: #4FD675 !important;
+  background: var(--colorPrimary) !important;
+  border-color: var(--colorPrimary) !important;
   color: #fff;
 }
 
@@ -205,7 +205,7 @@ select:focus {
 }
 
 a:hover {
-  color: #4FD675;
+  color: var(--colorPrimary);
 }
 
 .slick-slide {
@@ -229,8 +229,8 @@ hr {
 mark {
   padding: 0;
   background-color: transparent;
-  border-bottom: 3px solid #4FD675;
-  color: #4FD675;
+  border-bottom: 3px solid var(--colorPrimary);
+  color: var(--colorPrimary);
 }
 
 .section {
@@ -257,7 +257,7 @@ mark {
   content: "";
   height: 2px;
   width: 120px;
-  background-color: #4FD675;
+  background-color: var(--colorPrimary);
 }
 
 .bg-cover {
@@ -290,7 +290,7 @@ mark {
   content: "";
   height: 10px;
   width: 10px;
-  border: 1px solid #4FD675;
+  border: 1px solid var(--colorPrimary);
   left: 0;
   top: 7px;
   border-radius: 50px;
@@ -308,7 +308,7 @@ mark {
 }
 
 .badge-primary {
-  background-color: #4FD675;
+  background-color: var(--colorPrimary);
 }
 
 /* overlay */
@@ -328,11 +328,11 @@ mark {
 }
 
 .bg-primary {
-  background: #4FD675 !important;
+  background: var(--colorPrimary) !important;
 }
 
 .text-primary {
-  color: #4FD675 !important;
+  color: var(--colorPrimary) !important;
 }
 
 .text-default {
@@ -349,7 +349,7 @@ mark {
 }
 
 .st0 {
-  fill: #4FD675;
+  fill: var(--colorPrimary);
 }
 
 .sidebar-home {
@@ -404,7 +404,7 @@ mark {
 }
 
 .navbar-white .navbar-nav .nav-link:hover {
-  color: #4FD675;
+  color: var(--colorPrimary);
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
@@ -476,7 +476,7 @@ mark {
 }
 
 .navbar .dropdown-item:hover {
-  color: #4FD675 !important;
+  color: var(--colorPrimary) !important;
   background-color: #F9F9F9;
 }
 
@@ -497,7 +497,7 @@ mark {
 }
 
 .search-bar input:focus {
-  border-color: #4FD675;
+  border-color: var(--colorPrimary);
   outline: 0;
 }
 
@@ -558,7 +558,7 @@ mark {
 }
 
 .banner-shape-1 .path {
-  fill: #4FD675;
+  fill: var(--colorPrimary);
 }
 
 .banner-shape-2 {
@@ -568,7 +568,7 @@ mark {
 }
 
 .banner-shape-2 .path {
-  fill: #4FD675;
+  fill: var(--colorPrimary);
 }
 
 .banner-shape-3 {
@@ -578,7 +578,7 @@ mark {
 }
 
 .banner-shape-3 .path {
-  fill: #4FD675;
+  fill: var(--colorPrimary);
 }
 
 .banner-border {
@@ -586,7 +586,7 @@ mark {
   bottom: -60px;
   left: 0;
   width: 100%;
-  stroke: #4FD675;
+  stroke: var(--colorPrimary);
 }
 
 .header {
@@ -610,7 +610,7 @@ mark {
 }
 
 .header-shape-1 .path {
-  fill: #4FD675;
+  fill: var(--colorPrimary);
 }
 
 .header-shape-2 {
@@ -620,7 +620,7 @@ mark {
 }
 
 .header-shape-2 .path {
-  fill: #4FD675;
+  fill: var(--colorPrimary);
 }
 
 .header-shape-3 {
@@ -630,7 +630,7 @@ mark {
 }
 
 .header-shape-3 .path {
-  fill: #4FD675;
+  fill: var(--colorPrimary);
 }
 
 .header-border {
@@ -638,7 +638,7 @@ mark {
   bottom: -35px;
   left: 0;
   width: 100%;
-  stroke: #4FD675;
+  stroke: var(--colorPrimary);
 }
 
 .author {
@@ -653,7 +653,7 @@ mark {
 }
 
 .author-shape-1 .path {
-  fill: #4FD675;
+  fill: var(--colorPrimary);
 }
 
 .author-shape-2 {
@@ -663,7 +663,7 @@ mark {
 }
 
 .author-shape-2 .path {
-  fill: #4FD675;
+  fill: var(--colorPrimary);
 }
 
 .author-shape-3 {
@@ -673,7 +673,7 @@ mark {
 }
 
 .author-shape-3 .path {
-  fill: #4FD675;
+  fill: var(--colorPrimary);
 }
 
 .author-border {
@@ -681,7 +681,7 @@ mark {
   bottom: -15px;
   left: 0;
   width: 100%;
-  stroke: #4FD675;
+  stroke: var(--colorPrimary);
   z-index: -1;
 }
 
@@ -714,7 +714,7 @@ mark {
 }
 
 .wave-shape-1 .path {
-  fill: #4FD675;
+  fill: var(--colorPrimary);
 }
 
 .wave-shape-2 {
@@ -725,7 +725,7 @@ mark {
 }
 
 .wave-shape-2 .path {
-  fill: #4FD675;
+  fill: var(--colorPrimary);
 }
 
 .wave-shape-3 {
@@ -736,7 +736,7 @@ mark {
 }
 
 .wave-shape-3 .path {
-  fill: #4FD675;
+  fill: var(--colorPrimary);
 }
 
 .wave-shape-4 {
@@ -747,7 +747,7 @@ mark {
 }
 
 .wave-shape-4 .path {
-  fill: #4FD675;
+  fill: var(--colorPrimary);
 }
 
 .author-card {
@@ -782,7 +782,7 @@ mark {
   display: block;
   margin: 0 auto 10px;
   border: 5px solid transparent;
-  box-shadow: 0 0 0 2px #4FD675;
+  box-shadow: 0 0 0 2px var(--colorPrimary);
 }
 
 @media (max-width: 1200px) {
@@ -853,7 +853,7 @@ mark {
 }
 
 .card-meta-author:hover {
-  color: #4FD675;
+  color: var(--colorPrimary);
 }
 
 .card-meta-tag {
@@ -875,8 +875,8 @@ mark {
 }
 
 .card-meta-tag li a:hover {
-  background-color: #4FD675;
-  border-color: #4FD675;
+  background-color: var(--colorPrimary);
+  border-color: var(--colorPrimary);
   color: #fff;
 }
 
@@ -886,7 +886,7 @@ mark {
 }
 
 .post-title:hover {
-  color: #4FD675;
+  color: var(--colorPrimary);
 }
 
 .social-icons {
@@ -905,7 +905,7 @@ mark {
 }
 
 .social-icons li a:hover {
-  color: #4FD675;
+  color: var(--colorPrimary);
 }
 
 .post-slider {
@@ -951,7 +951,7 @@ mark {
 }
 
 .slick-arrow:hover {
-  background: #4FD675;
+  background: var(--colorPrimary);
 }
 
 .prevArrow {
@@ -972,14 +972,14 @@ mark {
   text-align: center;
   padding: 0;
   margin-right: 10px;
-  border: 1px solid #4FD675;
-  color: #4FD675;
+  border: 1px solid var(--colorPrimary);
+  color: var(--colorPrimary);
 }
 
 .pagination .page-item .page-link:hover {
-  background: #4FD675;
+  background: var(--colorPrimary);
   color: #fff;
-  border-color: #4FD675;
+  border-color: var(--colorPrimary);
 }
 
 .pagination .page-item .page-link:focus {
@@ -992,9 +992,9 @@ mark {
 }
 
 .pagination .page-item.active .page-link {
-  background: #4FD675;
+  background: var(--colorPrimary);
   color: #fff;
-  border-color: #4FD675;
+  border-color: var(--colorPrimary);
 }
 
 .author-block {
@@ -1055,7 +1055,7 @@ mark {
 }
 
 .content a:hover {
-  color: #4FD675;
+  color: var(--colorPrimary);
 }
 
 .content ol,
@@ -1085,7 +1085,7 @@ mark {
   height: 8px;
   width: 8px;
   border-radius: 50%;
-  background: #4FD675;
+  background: var(--colorPrimary);
   left: 3px;
   top: 8px;
 }
@@ -1204,7 +1204,7 @@ mark {
   font-size: 20px !important;
   color: #555;
   padding: 20px 40px;
-  border-left: 2px solid #4FD675;
+  border-left: 2px solid var(--colorPrimary);
   margin: 40px 0;
   font-weight: bold;
   background: #fff;
@@ -1253,7 +1253,7 @@ mark {
 }
 
 .code-tabs .nav-tabs .nav-item.active {
-  background: #4FD675;
+  background: var(--colorPrimary);
 }
 
 .code-tabs .nav-tabs .nav-item.active .nav-link {
@@ -1288,7 +1288,7 @@ mark {
 .form-group .form-control:focus {
   outline: 0;
   box-shadow: none;
-  border-color: #4FD675;
+  border-color: var(--colorPrimary);
 }
 
 .form-group textarea.form-control {
@@ -1299,7 +1299,7 @@ mark {
   margin-bottom: 30px;
   padding: 15px;
   border-radius: 5px;
-  border-top: 6px solid #4FD675;
+  border-top: 6px solid var(--colorPrimary);
   background-color: #fff;
 }
 
@@ -1327,7 +1327,7 @@ mark {
 }
 
 .widget-search input:focus {
-  border-color: #4FD675;
+  border-color: var(--colorPrimary);
   outline: 0;
 }
 
@@ -1360,7 +1360,7 @@ mark {
   display: block;
   margin: 0 auto 10px;
   border: 5px solid transparent;
-  box-shadow: 0 0 0 2px #4FD675;
+  box-shadow: 0 0 0 2px var(--colorPrimary);
 }
 
 @media (max-width: 1200px) {
@@ -1395,7 +1395,7 @@ mark {
 .widget-categories a::before {
   position: absolute;
   content: "#";
-  color: #4FD675;
+  color: var(--colorPrimary);
   left: 0;
   top: 0;
 }
@@ -1413,7 +1413,7 @@ mark {
 }
 
 .widget-list li a:hover {
-  color: #4FD675;
+  color: var(--colorPrimary);
 }
 
 .widget-list-inline li {
@@ -1422,15 +1422,15 @@ mark {
 
 .widget-list-inline li a {
   padding: 2px 15px;
-  border: 1px solid #4FD675;
+  border: 1px solid var(--colorPrimary);
   border-radius: 30px;
   display: block;
   color: #555;
 }
 
 .widget-list-inline li a:hover {
-  border-color: #4FD675;
-  background: #4FD675;
+  border-color: var(--colorPrimary);
+  background: var(--colorPrimary);
   color: #fff;
 }
 
@@ -1455,7 +1455,7 @@ mark {
 }
 
 .widget-social a:hover {
-  color: #4FD675;
+  color: var(--colorPrimary);
 }
 
 .quote {
@@ -1468,7 +1468,7 @@ mark {
 
 .quote i {
   font-size: 24px;
-  color: #4FD675;
+  color: var(--colorPrimary);
   margin-right: 10px;
 }
 
@@ -1477,7 +1477,7 @@ mark {
 }
 
 .quote-by {
-  color: #4FD675;
+  color: var(--colorPrimary);
 }
 
 .instagram-post img {
@@ -1499,7 +1499,7 @@ mark {
 }
 
 .error-shape-1 .path {
-  fill: #4FD675;
+  fill: var(--colorPrimary);
 }
 
 .error-shape-2 {
@@ -1510,7 +1510,7 @@ mark {
 }
 
 .error-shape-2 .path {
-  fill: #4FD675;
+  fill: var(--colorPrimary);
 }
 
 .error-shape-3 {
@@ -1521,7 +1521,7 @@ mark {
 }
 
 .error-shape-3 .path {
-  fill: #4FD675;
+  fill: var(--colorPrimary);
 }
 
 .footer {
@@ -1540,14 +1540,14 @@ mark {
 }
 
 .footer-list a:hover {
-  color: #4FD675;
+  color: var(--colorPrimary);
 }
 
 .footer-border {
   position: absolute;
   top: -75px;
   width: 100%;
-  stroke: #4FD675;
+  stroke: var(--colorPrimary);
 }
 
 .image-wrapper {
@@ -1576,7 +1576,7 @@ mark {
   content: "";
   height: 100%;
   width: 100%;
-  border: 1px solid #4FD675;
+  border: 1px solid var(--colorPrimary);
   left: 15px;
   top: 15px;
   border-radius: inherit;
@@ -1612,7 +1612,7 @@ mark {
   line-height: 55px;
   font-size: 20px;
   color: #fff;
-  background-color: #4FD675;
+  background-color: var(--colorPrimary);
   text-align: center;
   box-shadow: 0 0 0 5px rgba(79, 214, 117, 0.7);
   transition: 0.2s ease-out;
@@ -1627,7 +1627,7 @@ mark {
   height: 150px;
   width: 150px;
   color: #fff;
-  background-color: #4FD675;
+  background-color: var(--colorPrimary);
   line-height: 150px;
   border-radius: 50%;
   text-align: center;
@@ -1706,9 +1706,9 @@ mark {
 }
 
 .nav-pills-icon .nav-link.active {
-  color: #4FD675;
+  color: var(--colorPrimary);
   background-color: transparent;
-  border-color: #4FD675;
+  border-color: var(--colorPrimary);
 }
 
 .book-cover {

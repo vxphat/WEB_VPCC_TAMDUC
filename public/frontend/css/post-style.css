@@ -1,0 +1,131 @@
+.post-container {
+    max-width: 660px;
+    margin: 0 auto;
+    padding: 20px 15px;
+}
+
+.post-title {
+    font-size: 28px;
+    line-height: 34px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.post-meta {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    color: #666;
+    font-size: 13px;
+}
+
+.post-description {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.post-content {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #222;
+    text-align: justify;
+}
+
+.post-content p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.post-image {
+    margin: 15px 0;
+    width: 100%;
+}
+
+.post-image img {
+    width: 100%;
+    height: auto;
+}
+
+.post-image-caption {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    padding: 8px 0;
+    font-style: italic;
+}
+
+.author-info {
+    margin-top: 30px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 5px;
+}
+
+.author-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.author-name {
+    font-weight: 600;
+    color: #333;
+}
+
+.post-date {
+    color: #666;
+    font-size: 13px;
+}
+
+/* Related posts section */
+.related-posts {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.related-posts h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.related-post-item {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.related-post-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+}
+
+.related-post-title:hover {
+    color: #007bff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .post-container {
+        padding: 15px 10px;
+    }
+
+    .post-title {
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    .post-description {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
